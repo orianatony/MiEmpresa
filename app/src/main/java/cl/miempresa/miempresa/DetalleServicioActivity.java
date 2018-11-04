@@ -7,7 +7,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import cl.miempresa.miempresa.Clases.DBHelper;
-import cl.miempresa.miempresa.Clases.Empleado;
 import cl.miempresa.miempresa.Clases.Servicio;
 
 public class DetalleServicioActivity extends AppCompatActivity {
@@ -25,7 +24,7 @@ public class DetalleServicioActivity extends AppCompatActivity {
         TextView descripcion = findViewById(R.id.servicio_descripcion);
 
         DBHelper db = new DBHelper(this);
-        Servicio servicio = db.getServicio(id);
+        Servicio servicio = db.getServicioById(id);
 
         avatar.setImageResource(servicio.getAvatar());
         nombre.setText(servicio.getNombre());

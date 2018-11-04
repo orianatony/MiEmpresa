@@ -222,8 +222,44 @@ public class DBHelper extends SQLiteOpenHelper {
         return  servicio_id;
     }
 
+    public Servicio getServicio(List<String> data){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String id = data.get(0);
+        String nombre = data.get(1);
+        String descripcion = data.get(2);
+
+        String selectServicio = "SELECT * FROM " + SERVICIO_TABLA_NOMBRE + " WHERE 1 AND ";
+
+        if(!id.equals("")) {
+            selectServicio += SERVICIO_COLUMNA_ID + "=" + id + " AND ";
+        }
+
+        if(!nombre.equals("")) {
+            selectServicio += SERVICIO_COLUMNA_NOMBRE + "='" + nombre + "' AND" ;
+        }
+
+        if(!descripcion.equals("")) {
+            selectServicio += SERVICIO_COLUMNA_DESCRIPCION + "='" + descripcion + "' AND" ;
+        }
+
+        selectServicio += " 1";
+
+        Cursor cursor = db.rawQuery(selectServicio,null);
+
+        if (cursor != null && cursor.moveToFirst()){
+            Servicio servicio = new Servicio();
+            servicio.setId(cursor.getInt(cursor.getColumnIndex(SERVICIO_COLUMNA_ID)));
+            servicio.setNombre(cursor.getString(cursor.getColumnIndex(SERVICIO_COLUMNA_NOMBRE)));
+            servicio.setDescripcion(cursor.getString(cursor.getColumnIndex(SERVICIO_COLUMNA_DESCRIPCION)));
+            servicio.setAvatar(cursor.getInt(cursor.getColumnIndex(SERVICIO_COLUMNA_AVATAR)));
+            return  servicio;
+        }else{
+            return null;
+        }
+    }
     //Retorna servicio  Servicio de BD.
-    public Servicio getServicio(long servicio_id){
+    public Servicio getServicioById(long servicio_id){
         SQLiteDatabase db = this.getReadableDatabase();
         String selectServicio = "SELECT * FROM " + SERVICIO_TABLA_NOMBRE + " WHERE " + SERVICIO_COLUMNA_ID + " = " + servicio_id;
 

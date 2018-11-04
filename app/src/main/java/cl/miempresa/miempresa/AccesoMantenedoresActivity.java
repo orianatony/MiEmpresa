@@ -27,7 +27,7 @@ public class AccesoMantenedoresActivity extends AppCompatActivity {
         servicios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent s_intent = new Intent(AccesoMantenedoresActivity.this,MantenedorEmpleadosActivity.class);
+                Intent s_intent = new Intent(AccesoMantenedoresActivity.this,MantenedorServiciosActivity.class);
                 AccesoMantenedoresActivity.this.startActivity(s_intent);
             }
         });
