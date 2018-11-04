@@ -34,8 +34,11 @@
         <activity
             android:name=".MantenedorEmpleadosActivity"
             android:label="@string/mantenedor_empleados_title" />
-        <activity android:name=".MantenedorServiciosActivity"
-            android:label="@string/mantenedor_servicios_title"></activity>
+        <activity
+            android:name=".MantenedorServiciosActivity"
+            android:label="@string/mantenedor_servicios_title" />
+        <activity android:name=".GaleriaActivity"
+            android:label="@string/galeria_title"></activity>
     </application>
 
 </manifest>
