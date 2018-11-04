@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
+import cl.miempresa.miempresa.R;
+
 public class DBHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "empresa";
@@ -29,6 +31,14 @@ public class DBHelper extends SQLiteOpenHelper {
                                                             EMPLEADO_COLUMNA_CORREO + " TEXT," +
                                                             EMPLEADO_COLUMNA_AVATAR + " INTEGER " +
                                                         ")";
+
+    private static final String EMPLEADO_INSERTS =      "INSERT INTO " + EMPLEADO_TABLA_NOMBRE +
+                                                        " (" + EMPLEADO_COLUMNA_NOMBRE + "," + EMPLEADO_COLUMNA_CARGO + "," + EMPLEADO_COLUMNA_CORREO + "," + EMPLEADO_COLUMNA_AVATAR + ") VALUES " +
+                                                        " ('Mario Araya','Gerente General','maraya@kibernum.cl'," + R.drawable.e1 + ")," +
+                                                        " ('Karen Valladares','Gerente de Administración y Finanzas','karen.valladares@kibernum.cl'," + R.drawable.e2 + ")," +
+                                                        " ('Marcelo Solari','Gerente Comercial','msolari@kibernum.cl'," + R.drawable.e3 + ")," +
+                                                        " ('Marko Knezovic','Gerente Operaciones','marko.knezovic@kibernum.cl'," + R.drawable.e4 + ")";
+
     private static final String EMPLEADO_BORRAR_TABLA = "DROP TABLE IF EXISTS " + EMPLEADO_TABLA_NOMBRE;
 
     //TABLA SERVICIO
@@ -43,6 +53,19 @@ public class DBHelper extends SQLiteOpenHelper {
                                                             SERVICIO_COLUMNA_DESCRIPCION + " TEXT," +
                                                             SERVICIO_COLUMNA_AVATAR + " INTEGER " +
                                                         ")";
+    /*
+    * S1 = -800107
+    * S2 = -800002
+    * S3 = -800008
+    * S4 = -800028
+    * */
+    private static final String SERVICIO_INSERTS =   "INSERT INTO " + SERVICIO_TABLA_NOMBRE +
+                                                     " (" + SERVICIO_COLUMNA_NOMBRE + "," + SERVICIO_COLUMNA_DESCRIPCION + "," + SERVICIO_COLUMNA_AVATAR + ") VALUES " +
+                                                     " ('Software Engineering','Quality assurance, application development'," + R.drawable.s1 + ")," +
+                                                     " ('IT Consulting','Digital factory, agile transformation'," + R.drawable.s2 +")," +
+                                                     " ('IT Staffing','Team management, team transition'," + R.drawable.s3 +")," +
+                                                     " ('IT Academy','IT training, IT trends'," + R.drawable.s4 + ")";
+
     private static final String SERVICIO_BORRAR_TABLA = "DROP TABLE IF EXISTS " + SERVICIO_TABLA_NOMBRE;
 
     public DBHelper(Context context){
@@ -50,11 +73,12 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
-
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(EMPLEADO_CREAR_TABLA);
         db.execSQL(SERVICIO_CREAR_TABLA);
+        db.execSQL(EMPLEADO_INSERTS);
+        db.execSQL(SERVICIO_INSERTS);
     }
 
     @Override
@@ -120,7 +144,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public List<Empleado> getEmpleados(){
         List<Empleado> listaEmpleados = new ArrayList<Empleado>();
 
-        String selectQuery = "SELECT nombre,avatar FROM " + EMPLEADO_TABLA_NOMBRE + " ORDER BY 1 ASC";
+        String selectQuery = "SELECT * FROM " + EMPLEADO_TABLA_NOMBRE + " ORDER BY 1 ASC";
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);

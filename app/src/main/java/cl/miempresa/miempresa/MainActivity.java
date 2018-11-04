@@ -1,5 +1,6 @@
 package cl.miempresa.miempresa;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"Bienvenidos a Kibernum",Toast.LENGTH_SHORT).show();
                         break;
                     case 1:
-                        Toast.makeText(getApplicationContext(),"Lista Empleados",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this,ListaEmpleadosActivity.class);
+                        MainActivity.this.startActivity(intent);
                         break;
                     case 2:
                         Toast.makeText(getApplicationContext(),"Lista Servicios",Toast.LENGTH_SHORT).show();
