@@ -59,4 +59,9 @@ public class Empleado {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
+
+    @Override
+    public String toString(){
+        return this.getNombre();
+    }
 }

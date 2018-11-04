@@ -18,11 +18,14 @@
         </activity>
         <activity
             android:name=".ListaEmpleadosActivity"
-            android:label="@string/lista_empleados_title">
-        </activity>
+            android:label="@string/lista_empleados_title"></activity>
         <activity
             android:name=".ListaServiciosActivity"
-            android:label="@string/lista_servicios_title">
+            android:label="@string/lista_servicios_title"></activity>
+        <activity
+            android:name=".DetalleEmpleadoActivity"
+            android:label="@string/detalle_empleado_title">
+
         </activity>
     </application>
 
