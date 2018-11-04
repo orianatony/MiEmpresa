@@ -24,10 +24,12 @@
             android:label="@string/lista_servicios_title" />
         <activity
             android:name=".DetalleEmpleadoActivity"
-            android:label="@string/detalle_empleado_title"></activity>
+            android:label="@string/detalle_empleado_title" />
         <activity
             android:name=".DetalleServicioActivity"
-            android:label="@string/detalle_servicio_title"></activity>
+            android:label="@string/detalle_servicio_title" />
+        <activity android:name=".AccesoMantenedoresActivity"
+            android:label="@string/acceso_mantenedores_title"></activity>
     </application>
 
 </manifest>

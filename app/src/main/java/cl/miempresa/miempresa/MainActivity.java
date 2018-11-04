@@ -38,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
                         MainActivity.this.startActivity(s_intent);
                         break;
                     case 3:
-                        Toast.makeText(getApplicationContext(),"Mantenedores",Toast.LENGTH_SHORT).show();
+                        Intent a_m_intent = new Intent(MainActivity.this,AccesoMantenedoresActivity.class);
+                        MainActivity.this.startActivity(a_m_intent);
                         break;
                     case 4:
                         Toast.makeText(getApplicationContext(),"Galeria : Nuestros Socios Alianzas y certificaciones",Toast.LENGTH_SHORT).show();
