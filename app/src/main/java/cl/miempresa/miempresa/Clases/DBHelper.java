@@ -104,7 +104,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     //Retorna registro  Empleado de BD.
-    public Empleado getEmpleado(long empleado_id){
+    public Empleado getEmpleadoByID(long empleado_id){
         SQLiteDatabase db = this.getReadableDatabase();
         String selectEmpleado = "SELECT * FROM " + EMPLEADO_TABLA_NOMBRE + " WHERE " + EMPLEADO_COLUMNA_ID + " = " + empleado_id;
 
@@ -121,6 +121,49 @@ public class DBHelper extends SQLiteOpenHelper {
         empleado.setCorreo(cursor.getString(cursor.getColumnIndex(EMPLEADO_COLUMNA_CORREO)));
         empleado.setAvatar(cursor.getInt(cursor.getColumnIndex(EMPLEADO_COLUMNA_AVATAR)));
         return  empleado;
+    }
+
+    public Empleado getEmpleado(List<String> data){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String id = data.get(0);
+        String nombre = data.get(1);
+        String cargo = data.get(2);
+        String correo = data.get(3);
+
+        String selectEmpleado = "SELECT * FROM " + EMPLEADO_TABLA_NOMBRE + " WHERE 1 AND ";
+
+        if(!id.equals("")) {
+            selectEmpleado += EMPLEADO_COLUMNA_ID + "=" + id + " AND ";
+        }
+
+        if(!nombre.equals("")) {
+            selectEmpleado += EMPLEADO_COLUMNA_NOMBRE + "='" + nombre + "' AND" ;
+        }
+
+        if(!cargo.equals("")) {
+            selectEmpleado += EMPLEADO_COLUMNA_CARGO + "='" + cargo + "' AND" ;
+        }
+
+        if(!correo.equals("")) {
+            selectEmpleado += EMPLEADO_COLUMNA_CORREO + "='" + correo + "' AND" ;
+        }
+
+        selectEmpleado += " 1";
+
+        Cursor cursor = db.rawQuery(selectEmpleado,null);
+
+        if (cursor != null && cursor.moveToFirst()){
+            Empleado empleado = new Empleado();
+            empleado.setId(cursor.getInt(cursor.getColumnIndex(EMPLEADO_COLUMNA_ID)));
+            empleado.setNombre(cursor.getString(cursor.getColumnIndex(EMPLEADO_COLUMNA_NOMBRE)));
+            empleado.setCargo(cursor.getString(cursor.getColumnIndex(EMPLEADO_COLUMNA_CARGO)));
+            empleado.setCorreo(cursor.getString(cursor.getColumnIndex(EMPLEADO_COLUMNA_CORREO)));
+            empleado.setAvatar(cursor.getInt(cursor.getColumnIndex(EMPLEADO_COLUMNA_AVATAR)));
+            return  empleado;
+        }else{
+            return null;
+        }
     }
 
     //Actualiza registro  Empleado en BD.

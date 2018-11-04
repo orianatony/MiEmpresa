@@ -28,8 +28,11 @@
         <activity
             android:name=".DetalleServicioActivity"
             android:label="@string/detalle_servicio_title" />
-        <activity android:name=".AccesoMantenedoresActivity"
-            android:label="@string/acceso_mantenedores_title"></activity>
+        <activity
+            android:name=".AccesoMantenedoresActivity"
+            android:label="@string/acceso_mantenedores_title" />
+        <activity android:name=".MantenedorEmpleadosActivity"
+            android:label="@string/mantenedor_empleados_title"></activity>
     </application>
 
 </manifest>

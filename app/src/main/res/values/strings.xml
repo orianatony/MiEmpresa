@@ -5,4 +5,5 @@
     <string name="detalle_empleado_title">Detalle Empleado</string>
     <string name="detalle_servicio_title">Detalle Servicio</string>
     <string name="acceso_mantenedores_title">Acceso Mantenedores</string>
+    <string name="mantenedor_empleados_title">Mantenedor Empleados</string>
 </resources>

@@ -3,10 +3,8 @@ package cl.miempresa.miempresa;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import cl.miempresa.miempresa.Clases.DBHelper;
 import cl.miempresa.miempresa.Clases.Empleado;
@@ -27,7 +25,7 @@ public class DetalleEmpleadoActivity extends AppCompatActivity {
         TextView correo = findViewById(R.id.empleado_correo);
 
         DBHelper db = new DBHelper(this);
-        Empleado empleado = db.getEmpleado(id);
+        Empleado empleado = db.getEmpleadoByID(id);
 
 
         //Toast.makeText(getApplicationContext(),Integer.toString(empleado.getAvatar()),Toast.LENGTH_LONG).show();
