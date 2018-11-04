@@ -48,4 +48,9 @@ public class Servicio {
     public void setAvatar(int avatar) {
         this.avatar = avatar;
     }
+
+    @Override
+    public String toString(){
+        return this.getNombre();
+    }
 }

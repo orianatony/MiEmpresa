@@ -1,7 +1,10 @@
 package cl.miempresa.miempresa;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -22,17 +25,21 @@ public class ListaServiciosActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.list_view_servicios);
 
         DBHelper db = new DBHelper(this);
-        List<Servicio> listaServicios = db.getServicios();
+        final List<Servicio> listaServicios = db.getServicios();
 
-        List<String> nombresServicios = new ArrayList<String>();
-
-        for(Servicio servicio : listaServicios){
-            nombresServicios.add(servicio.getNombre());
-        }
-
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>
-                (this, android.R.layout.simple_list_item_1, nombresServicios);
+        final ArrayAdapter<Servicio> arrayAdapter = new ArrayAdapter<Servicio>
+                (this, android.R.layout.simple_list_item_1, listaServicios);
 
         listView.setAdapter(arrayAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Servicio servicio = listaServicios.get(position);
+                Intent d_e_intent = new Intent(ListaServiciosActivity.this,DetalleServicioActivity.class);
+                d_e_intent.putExtra("id",servicio.getId());
+                ListaServiciosActivity.this.startActivity(d_e_intent);
+            }
+        });
     }
 }

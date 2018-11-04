@@ -192,6 +192,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         Servicio servicio = new Servicio();
         servicio.setId(cursor.getInt(cursor.getColumnIndex(SERVICIO_COLUMNA_ID)));
+        servicio.setNombre(cursor.getString(cursor.getColumnIndex(SERVICIO_COLUMNA_NOMBRE)));
         servicio.setDescripcion(cursor.getString(cursor.getColumnIndex(SERVICIO_COLUMNA_DESCRIPCION)));
         servicio.setAvatar(cursor.getInt(cursor.getColumnIndex(SERVICIO_COLUMNA_AVATAR)));
         return  servicio;

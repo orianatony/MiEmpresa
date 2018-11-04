@@ -3,4 +3,5 @@
     <string name="lista_empleados_title">Lista Empleados</string>
     <string name="lista_servicios_title">Lista Servicios</string>
     <string name="detalle_empleado_title">Detalle Empleado</string>
+    <string name="detalle_servicio_title">Detalle Servicio</string>
 </resources>
