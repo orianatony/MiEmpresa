@@ -1,4 +1,4 @@
-package cl.miempresa.miempresa;
+package cl.miempresa.miempresa.Clases;
 
 public class Empleado {
 

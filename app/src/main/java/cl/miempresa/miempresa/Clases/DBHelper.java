@@ -1,4 +1,4 @@
-package cl.miempresa.miempresa;
+package cl.miempresa.miempresa.Clases;
 
 import android.content.ContentValues;
 import android.content.Context;

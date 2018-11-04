@@ -7,6 +7,8 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import cl.miempresa.miempresa.Adaptadores.GridViewCustomAdapter;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -24,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
                 switch(position){
                     case 0:
-                        Toast.makeText(getApplicationContext(),"Kibernum",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Bienvenidos a Kibernum",Toast.LENGTH_SHORT).show();
                         break;
                     case 1:
                         Toast.makeText(getApplicationContext(),"Lista Empleados",Toast.LENGTH_SHORT).show();
@@ -36,10 +38,12 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"Mantenedores",Toast.LENGTH_SHORT).show();
                         break;
                     case 4:
-                        Toast.makeText(getApplicationContext(),"Galeria",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Galeria : Nuestros Socios Alianzas y certificaciones",Toast.LENGTH_SHORT).show();
                         break;
                     case 5:
-                        Toast.makeText(getApplicationContext(),"Contacto",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Contacto : " +
+                                "San antonio 580, piso 9, Santiago Llamanos (+56 2) 22 816 35 00\n" +
+                                "(+56 2) 22 816 36 00",Toast.LENGTH_SHORT).show();
                         break;
                 }
 

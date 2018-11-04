@@ -16,34 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ListaEmpleadosActivity"
-            android:label="@string/title_activity_lista_empleados"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ListaServiciosActivity"
-            android:label="@string/title_activity_lista_servicios"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".MantenedoresActivity"
-            android:label="@string/title_activity_mantenedores"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".MantenedorEmpleadosActivity"
-            android:label="@string/title_activity_mantenedor_empleados"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".MantenedorServiciosActivity"
-            android:label="@string/title_activity_mantenedor_servicios"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".DetalleEmpleadoActivity"
-            android:label="@string/title_activity_detalle_empleado"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".DetalleServicioActivity"
-            android:label="@string/title_activity_detalle_servicio"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
