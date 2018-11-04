@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Kibernum</string>
     <string name="lista_empleados_title">Lista Empleados</string>
+    <string name="lista_servicios_title">Lista Servicios</string>
 </resources>

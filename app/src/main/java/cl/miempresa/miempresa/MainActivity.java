@@ -30,11 +30,12 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"Bienvenidos a Kibernum",Toast.LENGTH_SHORT).show();
                         break;
                     case 1:
-                        Intent intent = new Intent(MainActivity.this,ListaEmpleadosActivity.class);
-                        MainActivity.this.startActivity(intent);
+                        Intent e_intent = new Intent(MainActivity.this,ListaEmpleadosActivity.class);
+                        MainActivity.this.startActivity(e_intent);
                         break;
                     case 2:
-                        Toast.makeText(getApplicationContext(),"Lista Servicios",Toast.LENGTH_SHORT).show();
+                        Intent s_intent = new Intent(MainActivity.this,ListaServiciosActivity.class);
+                        MainActivity.this.startActivity(s_intent);
                         break;
                     case 3:
                         Toast.makeText(getApplicationContext(),"Mantenedores",Toast.LENGTH_SHORT).show();

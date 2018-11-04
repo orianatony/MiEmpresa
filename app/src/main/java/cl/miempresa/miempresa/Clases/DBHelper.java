@@ -217,7 +217,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public List<Servicio> getServicios(){
         List<Servicio> listaServicios = new ArrayList<Servicio>();
 
-        String selectQuery = "SELECT nombre,avatar FROM " + SERVICIO_TABLA_NOMBRE + " ORDER BY 1 ASC";
+        String selectQuery = "SELECT * FROM " + SERVICIO_TABLA_NOMBRE + " ORDER BY 1 ASC";
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);

@@ -20,6 +20,10 @@
             android:name=".ListaEmpleadosActivity"
             android:label="@string/lista_empleados_title">
         </activity>
+        <activity
+            android:name=".ListaServiciosActivity"
+            android:label="@string/lista_servicios_title">
+        </activity>
     </application>
 
 </manifest>
